@@ -14,14 +14,13 @@ export function Header() {
         return;
       }
       ethereum.request({ method: "eth_requestAccounts" }).then((acc: string[]) => {
-      
         setState({ acc: acc[0] });
       });
       ethereum.on("accountsChanged", function (acc: string[]) {
         setState({ acc: acc[0] });
       })
 
-    }, [setState]);
+    }, []);
 
     return (
       <div className="flex gap-2 justify-center pt-4">
